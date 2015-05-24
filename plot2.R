@@ -25,7 +25,7 @@ xaxes   <- c(minyear,maxyear,maxyear-minyear)
 
 png("plot2.png")
 
-plot(peryear$year,peryear$Emissions,
+plot(baltyears$year,baltyears$Emissions,
      xlab="Year",
      xaxp=xaxes,
      ylab="PM2.5 Emissions (tons)" ,
