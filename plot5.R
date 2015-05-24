@@ -21,7 +21,7 @@ motorrelated <- which(grepl( as.character( SCC$SCC.Level.Two), pattern=".*vehicl
 SCC_motorrelated <- SCC$SCC[motorrelated]
 
 
-png("plot4.png")
+png("plot5.png")
 
 allmotobaltimore <- NEItbl %>%
     filter( SCC %in% SCC_motorrelated ) %>% # SCC must be in the list of motor vehicle related SCC numbers
