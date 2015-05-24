@@ -1,3 +1,5 @@
+library(plyr)
+
 NEI <- readRDS("summarySCC_PM25.rds")
 SCC <- readRDS("Source_Classification_Code.rds")
 
@@ -7,9 +9,17 @@ SCC <- readRDS("Source_Classification_Code.rds")
 ## 2002, 2005, and 2008.
 
 peryear <- ddply( NEI, .(year) , summarise, Emissions = sum(Emissions) )
+minyear <-min(peryear$year)
+maxyear <- max(peryear$year)
+xaxes   <- c(minyear,maxyear,maxyear-minyear)
+plot(peryear$year,peryear$Emissions,xlab="Year",xaxp=xaxes,ylab="PM2.5 Emissions (tons)"  )
 
-plot(peryear$year,peryear$Emissions,xlab="Year")
 
-dev.copy(png,file"plot1.png")
+dev.copy(png,"plot1.png")
+dev.off()
+
+
+
+
 
 
