@@ -7,6 +7,7 @@
 
 library(dplyr)
 library(ggplot2)
+library(magrittr)
 
 # I use these lines to speed up loading
 if ( !exists("NEI") | !exists("NEItbl") ) {
@@ -23,6 +24,11 @@ baltyearstype <- NEItbl %>%
 
 png("plot3.png")
 
+
+#
+# The following uses the qplot, which is provided by the ggplot2 plotting
+# system
+#
 baltyearstype %>%
     qplot( year, Emissions, color = type , data = . , geom = "line" ) %>%
     add(ggtitle("PM2.5 Emissions in Baltimore for various types")) %>%
