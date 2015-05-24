@@ -26,7 +26,6 @@ maxyear <- max(peryear$year)
 xaxes   <- c(minyear,maxyear,maxyear-minyear)
 plot(peryear$year,peryear$Emissions,xlab="Year",xaxp=xaxes,ylab="PM2.5 Emissions (tons)"  )
 
-dev.copy(png,"plot1.png")
 dev.off()
 
 
